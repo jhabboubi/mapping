@@ -23,7 +23,8 @@ public class Employee {
     double eSalary;
 
 
-    @OneToMany @JoinColumn(name = "eId") @ToString.Exclude
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) @JoinColumn(name = "eId") @ToString.Exclude
     List<EmployeeDetails> employeeDetails;
 
 
