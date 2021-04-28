@@ -7,7 +7,9 @@ import lombok.extern.log4j.Log4j;
 import javax.persistence.*;
 import java.util.List;
 
-@Getter@Setter
+
+@Getter
+@Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,7 +26,8 @@ public class Employee {
 
 
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) @JoinColumn(name = "eId") @ToString.Exclude
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true) @JoinColumn(name="eId")
+    @ToString.Exclude
     List<EmployeeDetails> employeeDetails;
 
 

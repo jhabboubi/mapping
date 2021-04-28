@@ -1,7 +1,9 @@
 package com.perscholas;
 
+import com.perscholas.models.Department;
 import com.perscholas.models.Employee;
 import com.perscholas.models.EmployeeDetails;
+import com.perscholas.services.DepartmentService;
 import com.perscholas.services.EmployeeServices;
 import com.perscholas.util.JpaUtil;
 
@@ -17,6 +19,9 @@ public class MainRunner {
 
     public static void main(String[] args) {
         EmployeeServices es = new EmployeeServices();
+        DepartmentService ds = new DepartmentService();
+
+/*
 
         Employee employee = new Employee();
         employee.setEName("Konstantin");
@@ -38,6 +43,15 @@ public class MainRunner {
         employee.setEmployeeDetails(edList);
 
         es.createEmployee(employee);
+
+
+        ds.createDepartment(new Department("IT"));
+*/
+
+        ds.addEmployeeToDepartment
+                (emf.createEntityManager().find(Employee.class,1) ,
+                emf.createEntityManager().find(Department.class, 1)
+                        .getDId());
 
 
 
