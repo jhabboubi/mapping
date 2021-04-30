@@ -21,7 +21,6 @@ public class EmployeeDetails {
     int eDId;
     String eDPhone;
     String eDAddress;
-
     public EmployeeDetails(String eDPhone, String eDAddress) {
         this.eDPhone = eDPhone;
         this.eDAddress = eDAddress;
