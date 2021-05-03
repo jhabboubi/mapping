@@ -38,4 +38,35 @@ public class EmployeeServices implements IEmployee {
 
 
     }
+
+    @Override
+    public Employee findById(int id) {
+
+
+        // session
+        EntityManager em = MainRunner.emf.createEntityManager();
+        Employee employee = null;
+        try {
+            // transaction
+
+            em.getTransaction().begin();
+            // save
+             employee = em.find(Employee.class, id);
+            //commit
+            em.getTransaction().commit();
+
+            log.info("employee with id " + id + "was found and returned ");
+        } catch(IllegalStateException e){
+            em.getTransaction().rollback();
+            log.error("Error finding employee: " + id);
+            e.printStackTrace();
+
+        } finally {
+            //close em
+
+            em.close();
+            log.info("EntityManager is closed!");
+            return employee;
+        }
+    }
 }

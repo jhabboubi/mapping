@@ -14,4 +14,8 @@ public interface IEmployee {
 
     // sort
 
+    //find by id
+
+    Employee findById(int id);
+
 }
