@@ -21,7 +21,6 @@ public class MainRunner {
         EmployeeServices es = new EmployeeServices();
         DepartmentService ds = new DepartmentService();
 
-/*
 
         Employee employee = new Employee();
         employee.setEName("Konstantin");
@@ -46,7 +45,7 @@ public class MainRunner {
 
 
         ds.createDepartment(new Department("IT"));
-*/
+/*
 
         ds.addEmployeeToDepartment
                 (emf.createEntityManager().find(Employee.class,1) ,
@@ -54,6 +53,7 @@ public class MainRunner {
                         .getDId());
 
 
+*/
 
 
 

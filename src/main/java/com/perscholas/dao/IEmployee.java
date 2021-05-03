@@ -5,7 +5,7 @@ import com.perscholas.models.Employee;
 public interface IEmployee {
 
     //create
-    void createEmployee(Employee employee);
+    Employee createEmployee(Employee employee);
     //read all employees
 
     //update

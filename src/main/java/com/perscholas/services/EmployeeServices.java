@@ -11,7 +11,7 @@ import javax.persistence.TransactionRequiredException;
 @Log4j
 public class EmployeeServices implements IEmployee {
     @Override
-    public void createEmployee(Employee employee) {
+    public Employee createEmployee(Employee employee) {
         // session
         EntityManager em = MainRunner.emf.createEntityManager();
         try {
@@ -22,6 +22,7 @@ public class EmployeeServices implements IEmployee {
             em.persist(em.merge(employee));
             //commit
             em.getTransaction().commit();
+            em.flush();
 
             log.info(employee);
         } catch(IllegalStateException | EntityExistsException | IllegalArgumentException | TransactionRequiredException e ){
@@ -34,6 +35,7 @@ public class EmployeeServices implements IEmployee {
 
             em.close();
             log.info("EntityManager is closed!");
+            return employee;
         }
 
 
